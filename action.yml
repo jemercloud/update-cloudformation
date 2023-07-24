@@ -1,0 +1,17 @@
+name: 'Cloudformation update'
+description: |
+  Updates a cloudformation template. Uses previous template, only updates the parameters if they are passed as 'parameters'
+inputs: 
+  stack-name:
+    description: 'The name of the stack'
+    required: true 
+  parameters:
+    description: 'JSON string containing the parameters'
+    required: true
+  capabilities: 
+    decription: 'capabilities'
+    required: false 
+    default: 'CAPABILITY_NAMED_IAM'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
